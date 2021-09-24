@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -11,8 +11,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: './src/index.html',
-    }),
+      title: 'Todo List',
+      template: './src/index.html'
+    })
   ],
   module: {
     rules: [
