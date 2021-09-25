@@ -32,10 +32,10 @@ todos.forEach(({ description, id, completed }) => {
   data.appendChild(div);
 });
 
-for (let i = 0; i < todoList.length; i += 1) {
+for (let i = 0; i < todos.length; i += 1) {
   const inCheck = document.querySelector(`#check-${todos[i].id}`);
   inCheck.addEventListener('input', (e) => {
-    checkItem(i, e, todoList);
-    localStorage.setItem('todo', JSON.stringify(todoList));
+    checkItem(i, e, todos);
+    localStorage.setItem('todo', JSON.stringify(todos));
   });
 }
