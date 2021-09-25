@@ -83,6 +83,13 @@ li {
   width: 13px;
 }
 
+.delete-trash {
+  background-image: url(/src/assets/delete.png);
+  background-size: cover;
+  height: 13px;
+  width: 13px;
+}
+
 .btn-container {
   display: flex;
   justify-content: center;
