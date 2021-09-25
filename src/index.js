@@ -17,8 +17,8 @@ const todoList = [{
   id: 3,
 },
 ];
-
-todoList.forEach(({ description }) => {
+const todos = JSON.parse(localStorage.getItem('todo') || '[]');
+todos.forEach(({ description }) => {
   const div = document.createElement('div');
   div.classList.add('d-height');
   div.classList.add('todo-cont');
