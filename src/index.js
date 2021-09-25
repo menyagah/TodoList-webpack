@@ -34,7 +34,7 @@ todos.forEach(({ description, id, completed }) => {
 
 for (let i = 0; i < todos.length; i += 1) {
   const inCheck = document.querySelector(`#check-${todos[i].id}`);
-  inCheck.addEventListener('input', (e) => {
+  inCheck.addEventListener('change', (e) => {
     checkItem(i, e, todos);
     localStorage.setItem('todo', JSON.stringify(todos));
   });
