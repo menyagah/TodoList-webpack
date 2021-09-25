@@ -66,7 +66,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a simple To-Do list app that a user can use to add items remove and mark items as complete. The app stores its data in the local-storage hence data is persistent. Use this [link](https://fierce-inlet-77592.herokuapp.com/) link to view the project
+This is a simple To-Do list app that a user can use to add items remove and mark items as complete. The app stores its data in the local-storage hence data is persistent. Use this [link](https://raw.githack.com/menyagah/TodoList-webpack/feature/dist/index.html) to view the project
 
 ### Built With
 
