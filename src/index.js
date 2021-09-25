@@ -1,4 +1,5 @@
 import './style/styles.css';
+import checkItem from './checkItem.js';
 
 const data = document.querySelector('.data');
 const todoList = [{
@@ -17,6 +18,10 @@ const todoList = [{
   id: 3,
 },
 ];
+
+if (!localStorage.getItem('todo')) {
+  localStorage.setItem('todo', JSON.stringify(todoList));
+}
 const todos = JSON.parse(localStorage.getItem('todo') || '[]');
 todos.forEach(({ description, id, completed }) => {
   const div = document.createElement('div');
@@ -28,9 +33,9 @@ todos.forEach(({ description, id, completed }) => {
 });
 
 for (let i = 0; i < todoList.length; i += 1) {
-    const inCheck = document.querySelector(`#check-${todoList[i].id}`);
-    inCheck.addEventListener('input', (e) => {
-      checkItem(i, e, todoList);
-      localStorage.setItem('todo', JSON.stringify(todoList));
-    });
-  }
+  const inCheck = document.querySelector(`#check-${todos[i].id}`);
+  inCheck.addEventListener('input', (e) => {
+    checkItem(i, e, todoList);
+    localStorage.setItem('todo', JSON.stringify(todoList));
+  });
+}
