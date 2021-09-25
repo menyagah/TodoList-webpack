@@ -1,7 +1,8 @@
-import todo from './todoClass.js';
+import displayTodos from './displayItems.js';
+import attachInputEventListeners from './attachCheckListener.js';
 
-const input = document.querySelector('.input-field');
 const addTodo = () => {
+  const input = document.querySelector('.input-field');
   input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       if (input.value === '') {
@@ -12,8 +13,9 @@ const addTodo = () => {
         const id = Math.random().toString(36).substr(0, 5);
         todos.push({ description: input.value, completed: false, id });
         localStorage.setItem('todo', JSON.stringify(todos));
-        todo.displayTodos();
         input.value = '';
+        displayTodos();
+        attachInputEventListeners();
       }
     }
   });
