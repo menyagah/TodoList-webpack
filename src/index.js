@@ -18,11 +18,19 @@ const todoList = [{
 },
 ];
 const todos = JSON.parse(localStorage.getItem('todo') || '[]');
-todos.forEach(({ description }) => {
+todos.forEach(({ description, id, completed }) => {
   const div = document.createElement('div');
   div.classList.add('d-height');
   div.classList.add('todo-cont');
-  div.innerHTML = `<li><input type="checkbox" class="check-box"   id="check">${description}</li>
+  div.innerHTML = `<li><input type="checkbox" ${completed && 'checked'} class="check-box"   id="check-${id}">${description}</li>
     <div class="delete-icon"></div>`;
   data.appendChild(div);
 });
+
+for (let i = 0; i < todoList.length; i += 1) {
+    const inCheck = document.querySelector(`#check-${todoList[i].id}`);
+    inCheck.addEventListener('input', (e) => {
+      checkItem(i, e, todoList);
+      localStorage.setItem('todo', JSON.stringify(todoList));
+    });
+  }
